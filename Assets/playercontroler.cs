@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         //zczytaj klawiaturę w osi poziomej:
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         //wyświetl w konsoli stan klawiatury
-        Debug.Log(horizontalInput);
+        //Debug.Log(horizontalInput);
 
         //wylicz przesunięcie w osi x
         Vector3 movement = Vector3.right * horizontalInput;

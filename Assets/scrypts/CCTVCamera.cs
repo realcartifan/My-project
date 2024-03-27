@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,9 +26,9 @@ public class CCTVCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // mdyfikujemy rotacje obiektu za pomoca funkcji PingPong, kt�ra generuje warto?ci
-        // oscyluj?ce pomi?dzy 0 a 9, a nast?pnie mno?ymy to przez 10 ?eby uzyska? szybszy ruch
-        // i na koniec odejmujemy od warto?ci otrzymanej 45 stopni aby uzyska? ruch w zakresie -45 do 45
+        // mdyfikujemy rotacje obiektu za pomoca funkcji PingPong, która generuje wartoœci
+        // oscyluj¹ce pomiêdzy 0 a 9, a nastêpnie mno¿ymy to przez 10 ¿eby uzyskaæ szybszy ruch
+        // i na koniec odejmujemy od wartoœci otrzymanej 45 stopni aby uzyskaæ ruch w zakresie -45 do 45
         transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.PingPong(Time.time, 9) * 10 - 45, 0));
 
         CheckIfPlayerVisible();
@@ -36,6 +36,6 @@ public class CCTVCameraController : MonoBehaviour
 
     void CheckIfPlayerVisible()
     {
-        Debug.DrawRay(cameraLens.position, cameraLens.TransformDirection(Vector3.down) * 100, Color.yellow);
+        //Debug.DrawRay(cameraLens.position, cameraLens.TransformDirection(Vector3.down) * 100, Color.yellow);
     }
 }
