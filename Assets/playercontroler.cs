@@ -71,10 +71,24 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
        
-    } 
+    }
     private void OnTriggerEnter(Collider other)
-
     {
-        Debug.Log("BOOM");
+        //ta funkcja wykryje za każdym razem kiedy gracz wejdz w colider który jest triggerem
+        //może to być kamera ale może to też byc koniec poziomu
+
+        if (other.CompareTag("lvlend"))
+        {
+            //stanelismy a miejscu gdzie jest koniec poziomu - wygraliśmy
+
+            //find->nazwaobiektu->nazwaskryptu->nazwa funkcji
+            GameObject.Find("lvlmenager").GetComponent<lvlmenager>().OnWin();
+        }
+        if (other.CompareTag("cameraview"))
+        {
+            //kamera nas zobaczyła - przegraliśmy
+            GameObject.Find("lvlmenager").GetComponent<lvlmenager>().OnLose();
+
+        }
     }
 }
